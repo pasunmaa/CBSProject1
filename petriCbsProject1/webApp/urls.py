@@ -23,6 +23,6 @@ urlpatterns = [
     path('', list_view, name='home'),
     path('create/', create_view),
     path('<id>', detail_view ),
-    path('<id>/update', update_view),
-    path('<id>/delete', delete_view)
+    path('<id>/update', update_view, name='update_view'),
+    path('<id>/delete', delete_view, name='delete_view')
 ]

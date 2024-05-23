@@ -29,10 +29,11 @@
           <td>{{ data.price }}</td>
           <td>{{ data.fee }}</td>
           <td>{{ data.note }}</td>
+          <td>  <a href="{% url 'update_view' data.id %}">Update</a>  </td>
+          <td>  <a href="{% url 'delete_view' data.id %}">Delete</a>  </td>
         </tr>
         {% endfor %}
       </tbody>
 
     </table>
 </div>
-  
