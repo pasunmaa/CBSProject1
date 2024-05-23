@@ -1,11 +1,38 @@
 <div class="main">
- 
-    {% for data in dataset %}
- 
-    {{ data.title }}<br/>
-    {{ data.description }}<br/>
-    <hr/>
- 
-    {% endfor %}
- 
-</div>
+    <table>
+
+      <thead>
+        <tr>
+          <th>Owner</th>
+          <th>Transaction ID</th>
+          <th>Transaction Date</th>
+          <th>Broker</th>
+          <th>Ticker</th>
+          <th>Transaction Type</th>
+          <th>Amount</th>
+          <th>Price</th>
+          <th>Fee</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for data in dataset %}
+        <tr>
+          <td>{{ data.owner }}</td>
+          <td>{{ data.transaction_id }}</td>
+          <td>{{ data.transaction_date }}</td>
+          <td>{{ data.get_broker_display }}</td>
+          <td>{{ data.ticker }}</td>
+          <td>{{ data.get_transaction_type_display }}</td>
+          <td>{{ data.amount }}</td>
+          <td>{{ data.price }}</td>
+          <td>{{ data.fee }}</td>
+          <td>{{ data.note }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+  

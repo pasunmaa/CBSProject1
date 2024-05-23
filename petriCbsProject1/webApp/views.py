@@ -1,8 +1,8 @@
 from django.shortcuts import render
  
 # relative import of forms
-from .models import AppModel
-from .forms import AppForm
+from .models import TransactionModel
+from .forms import TransactionForm
  
  
 def create_view(request):
@@ -11,7 +11,7 @@ def create_view(request):
     context = {}
  
     # add the dictionary during initialization
-    form = AppForm(request.POST or None)
+    form = TransactionForm(request.POST or None)
     if form.is_valid():
         form.save()
          
@@ -25,7 +25,7 @@ def list_view(request):
     context = {}
  
     # add the dictionary during initialization
-    context["dataset"] = AppModel.objects.all() #.order_by("-id")
+    context["dataset"] = TransactionModel.objects.all() #.order_by("-id")
          
     return render(request, "list_view.html", context)
 
@@ -36,6 +36,6 @@ def detail_view(request, id):
     context ={}
  
     # add the dictionary during initialization
-    context["data"] = AppModel.objects.get(id = id)
+    context["data"] = TransactionModel.objects.get(id = id)
          
     return render(request, "detail_view.html", context)

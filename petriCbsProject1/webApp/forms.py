@@ -1,17 +1,25 @@
 from django import forms
-from .models import AppModel
+from .models import TransactionModel
  
  
 # creating a form
-class AppForm(forms.ModelForm):
+class TransactionForm(forms.ModelForm):
  
     # create meta class
     class Meta:
         # specify model to be used
-        model = AppModel
+        model = TransactionModel
  
         # specify fields to be used
         fields = [
-            "title",
-            "description",
+            "owner",
+            "transaction_id",
+            "transaction_date",
+            "broker",
+            "ticker",
+            "transaction_type",
+            "amount",
+            "price",
+            "fee",
+            "note",
         ]
