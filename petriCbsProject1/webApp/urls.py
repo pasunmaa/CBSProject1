@@ -21,7 +21,7 @@ from webApp.views import create_view, list_view, detail_view, update_view, delet
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', list_view, name='home'),
-    path('create/', create_view),
+    path('create/', create_view, name='create_new_transaction'),
     path('<id>', detail_view ),
     path('<id>/update', update_view, name='update_view'),
     path('<id>/delete', delete_view, name='delete_view')
